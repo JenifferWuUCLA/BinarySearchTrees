@@ -1,4 +1,4 @@
-# Binary Search Trees using C Language
+# Binary Search Trees, using C Language
 
 ## 二叉查找树
 > ##### @author Jeniffer Wu
