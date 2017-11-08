@@ -11,6 +11,7 @@
 #include <stdbool.h>
 
 /* redefine Item as appropriate */
+#define SLEN 20
 typedef struct item
 {
 	char petname[20];

@@ -9,8 +9,6 @@
 #include <ctype.h>
 #include "tree.h"
 
-#define SLEN 10
-
 char menu(void);
 void addpet(Tree * pt);
 void droppet(Tree * pt);
@@ -85,5 +83,10 @@ void addpet(Tree * pt)
 	{
 		puts("Please enter name of pet:");
 		s_gets(temp.petname, SLEN);
+		puts("Please enter pet kind:");
+		s_gets(temp.petkind, SLEN);
+		uppercase(temp.petname);
+		uppercase(temp.petkind);
+		AddItem(&temp, pt);
 	}
 }
