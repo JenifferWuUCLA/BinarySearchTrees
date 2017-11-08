@@ -90,3 +90,39 @@ void addpet(Tree * pt)
 		AddItem(&temp, pt);
 	}
 }
+
+void showpets(const Tree * pt)
+{
+	if (TreeIsEmpty(pt))
+		puts("No entries!");
+	else
+		Traverse(pt, printitem);
+}
+
+void printitem(Item item)
+{
+	printf("Pet: %-19s Kind: %-19s\n", item.petname, item.petkind);
+}
+
+void findpet(const Tree * pt)
+{
+	Item temp;
+
+	if (TreeIsEmpty(pt))
+	{
+		puts("No entries!");
+		return;    /* quit function if tree is empty */
+	}
+
+	puts("Please enter name of pet you wish to find:");
+	s_gets(temp.petname, SLEN);
+	puts("Please enter pet kind:");
+	s_gets(temp.petkind, SLEN);
+	uppercase(temp.petname);
+	uppercase(temp.petkind);
+	printf("%s the %s ", temp.petname, temp.petkind);
+	if (InTree(&temp, pt))
+		printf("is a member.\n");
+	else
+		printf("is not a member.\n");
+}
