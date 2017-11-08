@@ -1,5 +1,6 @@
 /*
- * tree.h
+ * tree.h -- binary search tree
+ *           no duplicate items are allowed in this tree
  *
  *  Created on: Nov 7, 2017
  *      Author: jenifferwu
