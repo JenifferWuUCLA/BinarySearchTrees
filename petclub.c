@@ -54,7 +54,7 @@ char menu(void)
 
 	puts("Nerfville Pet Club Membership Program");
 	puts("Enter the letter corresponding to your choice: ");
-	puts("a) add a pet			l)  show list of pets");
+	puts("a) add a pet		l)  show list of pets");
 	puts("n) number of pets		f)  find pets");
 	puts("d) delete a pet		q)  quit");
 	while ((ch = getchar()) != EOF)
