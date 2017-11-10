@@ -26,7 +26,7 @@ static void DeleteNode(Trnode **ptr);
 static void DeleteAllNodes(Trnode * ptr);
 
 /* function definitions */
-void InititalizeTree(Tree * ptree)
+void InitializeTree(Tree * ptree)
 {
 	ptree->root = NULL;
 	ptree->size = 0;
