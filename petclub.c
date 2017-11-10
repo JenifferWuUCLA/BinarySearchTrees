@@ -126,3 +126,53 @@ void findpet(const Tree * pt)
 	else
 		printf("is not a member.\n");
 }
+
+void droppet(Tree * pt)
+{
+	Item temp;
+
+	if (TreeIsEmpty(pt))
+	{
+		puts("No entries!");
+		return;    /* quit function if tree is empty */
+	}
+
+	puts("Please enter name of pet you wish to delete:");
+	s_gets(temp.petname, SLEN);
+	puts("Please enter pet kind:");
+	s_gets(temp.petkind, SLEN);
+	uppercase(temp.petname);
+	uppercase(temp.petkind);
+	printf("%s the %s ", temp.petname, temp.petkind);
+	if (DeleteItem(&temp, pt))
+		printf("is dropped from the club.\n");
+	else
+		printf("is not a member.\n");
+}
+
+void uppercase(char * str)
+{
+	while (*str)
+	{
+		*str = toupper(*str);
+		str++;
+	}
+}
+
+char * s_gets(char * st, int n)
+{
+	char * ret_val;
+	char * find;
+
+	ret_val = fgets(st, n, stdin);
+	if (ret_val)
+	{
+		find = strchr(st, '\n');    // look for newline
+		if (find)                   // if the address is not NULL
+			*find = '\0';           // place a null character there
+		else
+			while (getchar() != '\n')
+				continue;           // dispose of rest of line
+	}
+	return ret_val;
+}
